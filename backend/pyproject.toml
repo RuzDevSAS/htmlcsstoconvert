@@ -1,0 +1,11 @@
+[project]
+name = "backend"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.123.4",
+    "html2image>=2.0.5",
+    "python-multipart>=0.0.20",
+    "uvicorn>=0.34.0",
+    "pydantic-settings>=2.0.0",
+]

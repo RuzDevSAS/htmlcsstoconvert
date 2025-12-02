@@ -1,0 +1,14 @@
+services:
+    backend:
+        build: ./backend
+        image: htmlcsstoconvert-backend
+        container_name: htmlcsstoconvert-backend
+        ports:
+            - "8000:8000"
+
+    frontend:
+        build: ./frontend
+        image: htmlcsstoconvert-frontend
+        container_name: htmlcsstoconvert-frontend
+        ports:
+            - "5173:5173"
