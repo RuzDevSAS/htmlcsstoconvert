@@ -1,14 +1,23 @@
 services:
     backend:
         build: ./backend
-        image: htmlcsstoconvert-backend
-        container_name: htmlcsstoconvert-backend
         ports:
             - "8000:8000"
+        volumes:
+            - ./backend:/app
+        environment:
+            - PORT=8000
+        restart: always
 
     frontend:
         build: ./frontend
-        image: htmlcsstoconvert-frontend
-        container_name: htmlcsstoconvert-frontend
         ports:
             - "5173:5173"
+        volumes:
+            - ./frontend:/app
+            - /app/node_modules
+        depends_on:
+            - backend
+        environment:
+            - PUBLIC_API_URL=http://localhost:8000
+        restart: always
