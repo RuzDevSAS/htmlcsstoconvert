@@ -53,7 +53,7 @@
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
 			<a
-				href="/dashboard"
+				href="/auth/login"
 				class="text-sm font-semibold leading-6 text-white bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg transition-colors"
 			>
 				Iniciar Sesión <span aria-hidden="true">&rarr;</span>
@@ -103,7 +103,7 @@
 						</div>
 						<div class="py-6">
 							<a
-								href="/dashboard"
+								href="/auth/login"
 								class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-slate-800"
 								onclick={toggleMenu}>Iniciar Sesión</a
 							>
