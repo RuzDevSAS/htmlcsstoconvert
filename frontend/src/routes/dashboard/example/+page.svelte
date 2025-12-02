@@ -175,4 +175,73 @@
 			{/if}
 		</div>
 	</div>
+
+	<!-- Code Display Section -->
+	<div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+		<div class="space-y-4">
+			<h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+				<Code class="w-5 h-5" /> HTML Code
+			</h2>
+			<div class="relative group">
+				<pre
+					class="bg-slate-900 text-slate-50 p-4 rounded-lg overflow-x-auto font-mono text-sm border border-slate-700"><code
+						>{html}</code
+					></pre>
+			</div>
+		</div>
+
+		<div class="space-y-4">
+			<h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+				<FileCode class="w-5 h-5" /> CSS Code
+			</h2>
+			<div class="relative group">
+				<pre
+					class="bg-slate-900 text-slate-50 p-4 rounded-lg overflow-x-auto font-mono text-sm border border-slate-700"><code
+						>{css}</code
+					></pre>
+			</div>
+		</div>
+	</div>
+
+	<!-- API Usage Example -->
+	<div class="mt-12 space-y-6">
+		<h2
+			class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-4"
+		>
+			API Usage Example
+		</h2>
+
+		<div class="space-y-4">
+			<h3 class="text-lg font-semibold text-slate-800 dark:text-slate-200">cURL</h3>
+			<pre
+				class="bg-slate-900 text-slate-50 p-4 rounded-lg overflow-x-auto font-mono text-sm border border-slate-700"><code
+					>curl -X POST http://localhost:8000/convert \
+  -F "html=&lt;h1&gt;Hello World&lt;/h1&gt;" \
+  -F "css=h1 &#123; color: red; &#125;" \
+  -F "width=800" \
+  -F "height=600" \
+  --output image.png</code
+				></pre>
+		</div>
+
+		<div class="space-y-4">
+			<h3 class="text-lg font-semibold text-slate-800 dark:text-slate-200">JavaScript (Fetch)</h3>
+			<pre
+				class="bg-slate-900 text-slate-50 p-4 rounded-lg overflow-x-auto font-mono text-sm border border-slate-700"><code
+					>const formData = new FormData();
+formData.append('html', '&lt;h1&gt;Hello World&lt;/h1&gt;');
+formData.append('css', 'h1 &#123; color: red; &#125;');
+formData.append('width', '800');
+formData.append('height', '600');
+
+const response = await fetch('http://localhost:8000/convert', &#123;
+  method: 'POST',
+  body: formData
+&#125;);
+
+const blob = await response.blob();
+// Use the blob (e.g., download or display)</code
+				></pre>
+		</div>
+	</div>
 </div>
