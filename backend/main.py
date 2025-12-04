@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic_settings import BaseSettings
 from routes import convert
+from backend.routes.auth.routes import router as auth_router
 
 class Settings(BaseSettings):
     # Variables de Backend
@@ -31,6 +32,7 @@ app.add_middleware(
 )
 
 app.include_router(convert.router)
+app.include_router(auth_router)
 
 @app.get("/")
 def read_root():
